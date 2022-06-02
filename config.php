@@ -1,2 +1,2 @@
 <?php
-const DATA_DIR = "";
+const DATA_DIR = "",BASE_URI = "";

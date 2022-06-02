@@ -1,3 +1,6 @@
+<?php
+require_once __DIR__."/../config.php";
+?>
 <div contenteditable="true" id="textarea">
     paste image here
 </div>
@@ -70,9 +73,9 @@
 					textarea.innerHTML = "";
 					if (res.status === "success") {
 						if (navigator.clipboard) {
-							navigator.clipboard.writeText(`https://xpadev.net/image.php?q=${res.id}`);
+							navigator.clipboard.writeText(`<?=BASE_URI?>/image.php?q=${res.id}`);
 						}
-						textarea.innerText = `resized: https://xpadev.net/image.php?q=${res.id}\nsource: https://xpadev.net/image.php?q=${res.id}&raw=true`;
+						textarea.innerText = `resized: <?=BASE_URI?>/image.php?q=${res.id}\nsource: <?=BASE_URI?>/image.php?q=${res.id}&raw=true`;
 					}
 					overlay.classList.toggle("hide", true);
 
